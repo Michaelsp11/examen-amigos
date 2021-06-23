@@ -1,1 +1,11 @@
-
+:root {
+  --color-principal: #483d8b;
+}
+button.boton {
+  background-color: var(--color-principal);
+  color: #fff;
+}
+.contenedor-principal {
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
