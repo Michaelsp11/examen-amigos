@@ -9,3 +9,10 @@ button.boton {
   margin-top: 45px;
   margin-bottom: 45px;
 }
+.amigo {
+  background-color: var(--color-principal);
+  border-radius: 15px;
+  padding-top: 35px;
+  padding-top: 11px;
+  color: #fff;
+}
