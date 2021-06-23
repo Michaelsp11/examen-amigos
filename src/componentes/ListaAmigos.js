@@ -1,6 +1,10 @@
 import { FaTimes, FaPencilAlt, FaStar } from "react-icons/fa";
 export const ListaAmigos = (props) => {
-  const { amigos } = props;
+  const { amigos, setAmigo, setShowFormulario, borrarAmigo } = props;
+  const editarAmigo = (amigo) => {
+    setAmigo(amigo);
+    setShowFormulario(true);
+  };
   return (
     <ul className="row list-unstyled">
       {amigos.map((amigo) => {
@@ -16,16 +20,16 @@ export const ListaAmigos = (props) => {
         return (
           <li key={id} className="amigo col-12 col-sm-4">
             <div className="text-right">
-              <FaPencilAlt />
-              <FaTimes />
+              <FaPencilAlt onClick={() => editarAmigo(amigo)} />
+              <FaTimes onClick={() => borrarAmigo(id)} />
             </div>
             <div className="info">
               <p>{`Nombre: ${nombre}`}</p>
               <p>{`Apellido: ${apellido}`}</p>
               <p>
                 Valoración:
-                {valoraciones.map((valoracion) => (
-                  <FaStar />
+                {valoraciones.map((valoracion, i) => (
+                  <FaStar key={i} />
                 ))}
               </p>
             </div>
